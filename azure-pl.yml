@@ -15,7 +15,7 @@ variables:
   owgitverbose:     -v
 
   owimage_lnx:      'ubuntu-latest'
-  owimage_nt:       'vs2017-win2016'
+  owimage_nt:       'windows-latest'
   owimage_osx:      'macOS-latest'
   owtools_lnx:      GCC
   owtools_nt:       VISUALC
