@@ -1,5 +1,5 @@
 steps:
   - script: |
-      git config --global user.email "openwatcomazure@gmail.com"
-      git config --global user.name "Open Watcom Azure"
+      git config --global user.email "open.watcom.v2.qa@gmail.com"
+      git config --global user.name "Open Watcom QA/QC"
     displayName: "Configure git user"
