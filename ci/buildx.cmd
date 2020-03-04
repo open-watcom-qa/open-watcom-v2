@@ -1,6 +1,3 @@
-
-@echo include path (before): %include%
-
 @set OWECHO=off
 @if "%OWDEBUG%" == "1" set OWECHO=on
 @echo %OWECHO%
@@ -9,10 +6,6 @@ REM Script to build the Open Watcom bootstrap tools
 REM By Microsoft Visual Studio
 REM ...
 call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" amd64
-
-@echo include path (after): %include%
-pause
-
 REM ...
 @echo %OWECHO%
 REM ...
