@@ -48,13 +48,13 @@ goto toolsver
 if not '%OWTOOLS%' == 'VISUALC' goto no_visualc
 echo set OWTOOLSVER=_MSC_VER>getversi.gc
 echo set OWCYEAR=__DATE__>>getversi.gc
-cl -EP getversi.gc>getversi.bat
+cl -nologo -EP getversi.gc>getversi.bat
 goto toolsver
 :no_visualc
 if not '%OWTOOLS%' == 'INTEL' goto no_intel
 echo set OWTOOLSVER=__INTEL_COMPILER>getversi.gc
 echo set OWCYEAR=__DATE__>>getversi.gc
-icl -EP getversi.gc>getversi.bat
+icl -nologo -EP getversi.gc>getversi.bat
 goto toolsver
 :no_intel
 :toolsver
