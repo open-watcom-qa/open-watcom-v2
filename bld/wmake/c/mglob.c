@@ -251,7 +251,7 @@ const char FAR UNIXBuiltIn[] = {
      "LDFLAGS=\n"
      "CC=cl\n"
      "FC=fl\n"
-     "CFLAGS=-nologo\n"
+     "CFLAGS=\n"
      ".c.exe:\n"
      "    $(CC) $(CFLAGS) $(LDFLAGS) $<\n"
      ".f.exe:\n"

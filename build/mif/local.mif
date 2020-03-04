@@ -124,15 +124,15 @@ cl_extra_libs = $(cl_extra_libs_gen)
 # bld settings
 ############################
 !ifdef __INTEL_TOOLS__
-bcc  = icl -nologo -c $(bldver_cppflags)
-bcxx = icl -nologo -c $(bldver_cppflags)
-bcl  = $(noecho)icl -nologo $(bldver_cppflags)
-blib = $(noecho)xilib -nologo
+bcc  = icl -c $(bldver_cppflags)
+bcxx = icl -c $(bldver_cppflags)
+bcl  = $(noecho)icl $(bldver_cppflags)
+blib = $(noecho)xilib
 !else
-bcc  = cl -nologo -c $(bldver_cppflags)
-bcxx = cl -nologo -c $(bldver_cppflags)
-bcl  = $(noecho)cl -nologo $(bldver_cppflags)
-blib = $(noecho)lib -nologo
+bcc  = cl -c $(bldver_cppflags)
+bcxx = cl -c $(bldver_cppflags)
+bcl  = $(noecho)cl $(bldver_cppflags)
+blib = $(noecho)lib
 !endif
 
 # extra objects for linking via cl
@@ -163,7 +163,7 @@ bld_cxx_flags = -EHsc
 
 bld_ldflags1 = $(common_ldflags) -Fm
 
-bld_ldflags  =  $(bld_cl_extra_libs_gen) -link -nologo &
+bld_ldflags  =  $(bld_cl_extra_libs_gen) -link &
     -MAPINFO:EXPORTS -INCREMENTAL:NO -DEFAULTLIB:user32.lib -DEFAULTLIB:ole32.lib &
     -DEFAULTLIB:advapi32.lib -DEFAULTLIB:shell32.lib -DEFAULTLIB:gdi32.lib -DEFAULTLIB:comdlg32.lib &
     -NODEFAULTLIB:libucrt.lib -DEFAULTLIB:ucrt.lib &
@@ -179,13 +179,13 @@ bld_libflags = -out:$^@
 # standard settings
 ############################
 !ifdef __INTEL_TOOLS__
-cc  = $(noecho)icl -nologo -c $(bldver_cppflags)
-cxx = $(noecho)icl -nologo -c $(bldver_cppflags)
-cl  = $(noecho)icl -nologo $(bldver_cppflags)
+cc  = $(noecho)icl -c $(bldver_cppflags)
+cxx = $(noecho)icl -c $(bldver_cppflags)
+cl  = $(noecho)icl $(bldver_cppflags)
 !else
-cc   = $(noecho)cl -nologo -c $(bldver_cppflags)
-cxx  = $(noecho)cl -nologo -c $(bldver_cppflags)
-cl   = $(noecho)cl -nologo $(bldver_cppflags)
+cc   = $(noecho)cl -c $(bldver_cppflags)
+cxx  = $(noecho)cl -c $(bldver_cppflags)
+cl   = $(noecho)cl $(bldver_cppflags)
 !endif
 
 cppflags_nt  = $(common_cppflags) $(common_cppflags_nt)
@@ -208,7 +208,7 @@ cflags_wind = $(cflags_gen)
 # options for linking
 ldflags1 = $(common_ldflags) -Fm
 
-ldflags_gen_all  = -link -nologo &
+ldflags_gen_all  = -link &
     -INCREMENTAL:NO -DEFAULTLIB:user32.lib -DEFAULTLIB:ole32.lib -DEFAULTLIB:advapi32.lib &
     -DEFAULTLIB:shell32.lib -DEFAULTLIB:gdi32.lib -DEFAULTLIB:comdlg32.lib &
     -NODEFAULTLIB:libucrt.lib -DEFAULTLIB:ucrt.lib
